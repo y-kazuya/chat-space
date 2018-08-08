@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-## memberテーブル
+## membersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -34,7 +34,7 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-##userテーブル
+##usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -50,7 +50,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null :false|
+|name|string|null :false, unique: true|
 
 
 ### Association
@@ -72,7 +72,3 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-
-####index
-- add_index :group, [:text, :img, :name]
-- 
