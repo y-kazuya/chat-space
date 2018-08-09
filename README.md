@@ -41,6 +41,7 @@ Things you may want to cover:
 |name|string|null :false, unique: true|
 |mail|string|null :false, unique: true|
 
+
 ### Association
 - has_many :members
 - has_many :groups, through: :members
