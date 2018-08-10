@@ -1,0 +1,52 @@
+
+.side-ver{
+    width: 300px;
+    height: 100%;
+    background-color: #2f3e51;
+    color: #ffffff;
+
+    &__header {
+        height: $side_ver_header_height;
+        padding: $side_side_padding;
+        background-color: #253141;
+        position: relative;
+        
+        &__contents{
+            
+            &__user-name{
+                font-size: 16px;
+                font-weight: bold;
+                // line-height: $side_ver_header_height;
+                @include set_height();
+            }
+            &__icons{
+                @include set_height();
+                right:40px;
+            
+                &__1{
+                    float:right;
+                }
+                &__2{
+                    float:right;
+                }
+            }
+        }
+    }
+
+    &__groupes{
+        padding: $side_side_padding;
+        &__lists{
+            margin-top:20px;
+            &__list{
+                margin-bottom:40px;
+                &__name{
+                    font-size:15px;
+                }
+                &__member{
+                    font-size:11px;
+                }
+            }
+        }
+    }
+
+}
