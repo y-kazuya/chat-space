@@ -1,8 +1,12 @@
 // ヘッダー部分
 
 // サイドバー部分
-@mixin set_height(){
+    @mixin set_height(){
     position: absolute;
-    top: ($side_ver_header_height / 2.5);
-}
-// チャット部分
+    top: ($main_header_height / 2.5);
+    }
+
+
+
+
+    
