@@ -1,49 +1,50 @@
 
-.side-ver{
-    width: 300px;
-    height: 100%;
+.side-ver{              //サイドバー 0
     background-color: #2f3e51;
     color: #ffffff;
-
-    &__header {
-        height: $side_ver_header_height;
-        padding: $side_side_padding;
+    height: 100vh;
+    -webkit-flex-basis: $side_ver_width;
+    flex-basis: $side_ver_width;
+    &__header {                  //サイドバー上部  1
         background-color: #253141;
+        height: $main_header_height;
+        padding: $side_side_padding;
         position: relative;
-        
         &__contents{
-            
-            &__user-name{
+            &__user-name{               //ユーザー名 2
                 font-size: 16px;
                 font-weight: bold;
-                // line-height: $side_ver_header_height;
                 @include set_height();
             }
-            &__icons{
+            &__icons{                   //設定アイコン 2
                 @include set_height();
-                right:40px;
-            
-                &__1{
-                    float:right;
+                right: 20px;
+                font-size: 17px;
+                .fa:before{color:white;}
+                &--1{                       //グループ作成 3
+                    float: right;
+                    padding-left: 5px;
                 }
-                &__2{
-                    float:right;
+                &--2{                       //ユーザー設定 3
+                    float: right;
                 }
             }
         }
     }
 
-    &__groupes{
+    &__groupes{                 //サイドバーグループリスト 1
         padding: $side_side_padding;
-        &__lists{
-            margin-top:20px;
-            &__list{
-                margin-bottom:40px;
-                &__name{
-                    font-size:15px;
+        &__lists{                  //リスト ul 2
+            margin-top: 20px;
+            a{text-decoration: none; color: #ffffff;}
+            &__list{                 //リストli 3
+                margin-bottom: 40px;     
+                &--name{                //グループ名 4
+                    font-size: 15px;
                 }
-                &__member{
-                    font-size:11px;
+                &--member{              //グループメンバー 4
+                    font-size: 11px;
+                    padding-top: 5px;
                 }
             }
         }
