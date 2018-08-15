@@ -1,102 +1,98 @@
 .chatscreen{                  //チャット画面 0
-    height: 100%;
-    width: calc(100vh - #{$side_ver_width});
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    &__header {                             //上の部分 1
-        height: $main_header_height;
-        border-bottom: 1px solid #eeeeee;
-        position: relative;
-        box-sizing: border-box;
-        &--group-name {                          //グループの名前 2
-            color: #333333;
-            font-size: 20px;
-            padding: 35px 40px 15px 40px;
-        }
-        &--member {                              //グループメンバー 2
-            color: $sub_text;
-            font-size: 12px;
-            padding: $chat_padding;
-        }
-        &--edit {                                //editボタン 2
-            color: $edit_color;
-            height: 40px;
-            width: 70px;
-            border:1px solid $edit_color;
-            position: absolute;
-            top: 28px;
-            right: 40px;
-            text-align: center;
-            line-height: 40px;
-            a{text-decoration: none; color: $edit_color;}
-        }
-
+  height: 100%;
+  width: calc(100vh - #{$side_ver_width});
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  &__header {                             //上の部分 1
+    height: $main_header_height;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+    box-sizing: border-box;
+    &--group-name {                          //グループの名前 2
+      color: #333333;
+      font-size: 20px;
+      padding: 35px 40px 15px 40px;
     }
-
-    &__main {                                 //message表示画面 1
-        height: calc(100vh - #{$main_header_height} - #{$footer_height});
-        padding: $chat_padding;
-        overflow: scroll;
-        box-sizing: border-box;
-        &__message-lists {                       //messages  2
-            padding-top: 46px;        
-            &__message {                                //message 3
-                color: #434a51;
-                padding-bottom: 40px;
-                &--user {                                  //username 4
-                    font-weight: bold;
-                    font-size: 16px;
-                    float: left;
-                    padding-right: 10px;
-                }
-                &--date {                                   //date  4
-                    color: $sub_text;
-                    font-size: 12px;
-                }
-                &--text {                                   //text 4
-                    padding-top: 10px;
-                }
-            }  
-        }
+    &--member {                              //グループメンバー 2
+      color: $color_lightgray;
+      font-size: 12px;
+      padding: $chat_padding;
     }
-
-    &__footer{                                   //入力画面  1
-        height: $footer_height;
-        padding: 20px 40px;
-        box-sizing: border-box;
-        background-color: #aaaaaa;
-        &__form{                                       //入力フォーム 2
-            &--input{                                      // 文書 3
-                color: #434a54;
-                height: $input_box_height;
-                width: calc(100% - 175px);  //textbox-size-margin:40+40 + send:width&margin 95
-                float: left;
-                padding: 0 10px;
-                border: none;
-                
-            }
-            &--picture{                                     // 写真 3
-                background-color: white;
-                height: $input_box_height;
-                width: 40px;
-                float: left;
-                .fa:before{
-                    font-size: 21px;
-                    line-height: $input_box_height;
-                }
-            }
-            &--send{                                        // 送信 3
-                background-color: #38aef0;
-                color:white;
-                height: $input_box_height;
-                width: 100px;
-                margin-left: 15px;
-                font-size: 15px;
-                float: right;
-                border: none;
-            }
-
-        }
+    &--edit {                                //editボタン 2
+      color: $color_skyblue;
+      height: 40px;
+      width: 70px;
+      border:1px solid $color_skyblue;
+      position: absolute;
+      top: 28px;
+      right: 40px;
+      text-align: center;
+      line-height: 40px;
+      a{text-decoration: none; color: $color_skyblue;}
     }
+  }
 
+  &__main {                                 //message表示画面 1
+    height: calc(100vh - #{$main_header_height} - #{$footer_height});
+    padding: $chat_padding;
+    overflow: scroll;
+    box-sizing: border-box;
+    &__message-lists {                       //messages  2
+      padding-top: 46px;        
+      &__message {                                //message 3
+        color: #434a51;
+        padding-bottom: 40px;
+        &--user {                                  //username 4
+          font-weight: bold;
+          font-size: 16px;
+          float: left;
+          padding-right: 10px;
+        }
+        &--date {                                   //date  4
+          color: $color_lightgray;
+          font-size: 12px;
+        }
+        &--text {                                   //text 4
+          padding-top: 10px;
+        }
+      }  
+    }
+  }
+
+  &__footer{                                   //入力画面  1
+    height: $footer_height;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    background-color: #aaaaaa;
+    &__form{                                       //入力フォーム 2
+      &--input{                                      // 文書 3
+        color: #434a54;
+          height: $input_box_height;
+          width: calc(100% - 175px);  //textbox-size-margin:40+40 + send:width&margin 95
+          float: left;
+          padding: 0 10px;
+          border: none;
+      }
+      &--picture{                                     // 写真 3
+        background-color: $color_white;
+        height: $input_box_height;
+        width: 40px;
+        float: left;
+        .fa:before{
+          font-size: 21px;
+          line-height: $input_box_height;
+        }
+      }
+      &--send{                                        // 送信 3
+        background-color: #38aef0;
+        color: $color_white;
+        height: $input_box_height;
+        width: 100px;
+        margin-left: 15px;
+        font-size: 15px;
+        float: right; 
+        border: none;
+      }
+    }
+  }
 }

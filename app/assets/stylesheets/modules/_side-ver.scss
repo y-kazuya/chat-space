@@ -1,55 +1,52 @@
-
 .side-ver{              //サイドバー 0
-    background-color: #2f3e51;
-    color: #ffffff;
-    height: 100vh;
-    -webkit-flex-basis: $side_ver_width;
-    flex-basis: $side_ver_width;
-    &__header {                  //サイドバー上部  1
-        background-color: #253141;
-        height: $main_header_height;
-        padding: $side_side_padding;
-        position: relative;
-        &__contents{
-            &__user-name{               //ユーザー名 2
-                font-size: 16px;
-                font-weight: bold;
-                @include set_height();
-            }
-            &__icons{                   //設定アイコン 2
-                @include set_height();
-                right: 20px;
-                font-size: 17px;
-                .fa:before{color:white;}
-                &--1{                       //グループ作成 3
-                    float: right;
-                    padding-left: 5px;
-                }
-                &--2{                       //ユーザー設定 3
-                    float: right;
-                }
-            }
+  background-color: #2f3e51;
+  color: $color_white;
+  height: 100vh;
+  -webkit-flex-basis: $side_ver_width;
+  flex-basis: $side_ver_width;
+  &__header {                  //サイドバー上部  1
+    background-color: #253141;
+    height: $main_header_height;
+    padding: $side_side_padding;
+    position: relative;
+    &__contents{
+      &__user-name{               //ユーザー名 2
+        font-size: 16px;
+        font-weight: bold;
+        @include set_height();
+      }
+      &__icons{                   //設定アイコン 2
+        @include set_height();
+        right: 20px;
+        font-size: 17px;
+        .fa:before{color: $color_white;}
+        &--1{                       //グループ作成 3
+          float: right;
+          padding-left: 5px;
         }
-    }
-
-    &__groupes{                 //サイドバーグループリスト 1
-        height: calc(100vh - #{$main_header_height});
-        padding: $side_side_padding;
-        overflow: scroll;
-        &__lists{                  //リスト ul 2
-            margin-top: 20px;
-            a{text-decoration: none; color: #ffffff;}
-            &__list{                 //リストli 3
-                margin-bottom: 40px;    
-                &--name{                //グループ名 4
-                    font-size: 15px;
-                }
-                &--member{              //グループメンバー 4
-                    font-size: 11px;
-                    padding-top: 5px;
-                }
-            }
+        &--2{                       //ユーザー設定 3
+          float: right;
         }
+      }
     }
-
+  }
+  &__groupes{                 //サイドバーグループリスト 1
+    height: calc(100vh - #{$main_header_height});
+    padding: $side_side_padding;
+    overflow: scroll;
+    &__lists{                  //リスト ul 2
+      margin-top: 20px;
+      a{text-decoration: none; color: $color_white;}
+      &__list{                 //リストli 3
+        margin-bottom: 40px;    
+        &--name{                //グループ名 4
+          font-size: 15px;
+        }
+        &--member{              //グループメンバー 4
+          font-size: 11px;
+          padding-top: 5px;
+        }
+      }
+    }
+  }
 }
