@@ -1,0 +1,26 @@
+.chatscreen
+  .chatscreen__header
+    .chatscreen__header--group-name
+      Group-name
+    .chatscreen__header--member
+      Member
+    .chatscreen__header--edit
+      %a(href="")Edit
+  .chatscreen__main
+    .chatscreen__main__message-lists
+      .chatscreen__main__message-lists__message
+        .chatscreen__main__message-lists__message--user
+          name
+        .chatscreen__main__message-lists__message--date
+          created_date
+        .chatscreen__main__message-lists__message--text
+          text
+
+  .chatscreen__footer
+    %form.chatscreen__footer__form
+      %input.chatscreen__footer__form--input(type="text" placeholder="type a message")
+      .chatscreen__footer__form--picture
+        %label.upload-label{for: "upload-icon"}
+          %i.fa.fa-picture-o#idupload-icon
+        %input(type="file" id ="upload-icon" style="display:none")
+      %input.chatscreen__footer__form--send(type="submit" value="SEND")

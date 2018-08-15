@@ -1,0 +1,22 @@
+.side-ver
+  .side-ver__header
+    .side-ver_header__contents
+      %h3.side-ver__header__contents__user-name
+        = current_user.name
+      %ul.side-ver__header__contents__icons 
+        %li.side-ver__header__contents__icons--1
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
+        %li.side-ver__header__contents__icons--2 
+          = link_to new_group_path do
+            = fa_icon 'pencil-square-o', class: 'icon'
+        
+  .side-ver__groupes
+    %ul.side-ver__groupes__lists
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          %li.side-ver__groupes__lists__list
+            .side-ver__groupes__lists__list--name
+              = group.name
+            .side-ver__groupes__lists__list--message
+              New_message
