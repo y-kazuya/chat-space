@@ -1,0 +1,40 @@
+.header
+  #header チャットグループが作成されました。
+
+.main-contents
+  .side-ver
+    .side-ver__header
+      .side-ver_header__contents
+        .side-ver__header__contents__user-name  aaa
+        %ul.side-ver__header__contents__icons 
+          %li.side-ver__header__contents__icons--1
+            %a(href="")
+              %i.fa.fa-cog
+          %li.side-ver__header__contents__icons--2 
+            %a(href="")
+              %i.fa.fa-edit
+            
+    .side-ver__groupes
+      %ul.side-ver__groupes__lists
+        =render partial: "groupe"
+
+  .chatscreen
+    .chatscreen__header
+      .chatscreen__header--group-name
+        Group-name
+      .chatscreen__header--member
+        Member
+      .chatscreen__header--edit
+        %a(href="")Edit
+    .chatscreen__main
+      .chatscreen__main__message-lists
+        =render partial: "message"
+
+    .chatscreen__footer
+      %form.chatscreen__footer__form
+        %input.chatscreen__footer__form--input(type="text" placeholder="type a message")
+        .chatscreen__footer__form--picture
+          %label.upload-label{for: "upload-icon"}
+            %i.fa.fa-picture-o#idupload-icon
+          %input(type="file" id ="upload-icon" style="display:none")
+        %input.chatscreen__footer__form--send(type="submit" value="SEND")
