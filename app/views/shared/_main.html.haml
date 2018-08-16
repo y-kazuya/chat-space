@@ -3,7 +3,9 @@
     .chatscreen__header--group-name
       = @group.name
     .chatscreen__header--member
-      = @group
+      Member:
+      - @group.users.each do |user|
+        = "#{user.name}｜"
     .chatscreen__header--edit
       = link_to "edit", edit_group_path(@group) 
   .chatscreen__main
