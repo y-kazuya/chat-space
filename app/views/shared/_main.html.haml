@@ -1,26 +1,26 @@
 .chatscreen
   .chatscreen__header
     .chatscreen__header--group-name
-      Group-name
+      = @group.name
     .chatscreen__header--member
-      Member
+      = @group
     .chatscreen__header--edit
-      %a(href="")Edit
+      = link_to "edit", edit_group_path(@group) 
   .chatscreen__main
     .chatscreen__main__message-lists
-      .chatscreen__main__message-lists__message
-        .chatscreen__main__message-lists__message--user
-          name
-        .chatscreen__main__message-lists__message--date
-          created_date
-        .chatscreen__main__message-lists__message--text
-          text
+      = render @messages
+      -#= render partial: 'message', collection: @messages  
 
   .chatscreen__footer
-    %form.chatscreen__footer__form
-      %input.chatscreen__footer__form--input(type="text" placeholder="type a message")
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'chatscreen__footer__form--input', placeholder: 'type a message'  
       .chatscreen__footer__form--picture
-        %label.upload-label{for: "upload-icon"}
-          %i.fa.fa-picture-o#idupload-icon
-        %input(type="file" id ="upload-icon" style="display:none")
-      %input.chatscreen__footer__form--send(type="submit" value="SEND")
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'chatscreen__footer__form--send'
+
+
+
+
+-# %form.chatscreen__footer__form
