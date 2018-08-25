@@ -5,6 +5,6 @@
     = message.created_at.strftime("%Y/%m/%d %H:%M")
 
   .chatscreen__main__message-lists__message--text
-    - if message.content.present? 
-      = message.content if message.content.present?  
+    - if message.content.present?
+      = message.content if message.content.present?
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
