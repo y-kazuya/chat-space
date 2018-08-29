@@ -2,7 +2,7 @@
   .chatscreen__main__message-lists__message--user
     = message.user.name
   .chatscreen__main__message-lists__message--date
-    = message.created_at.strftime("%Y/%m/%d %H:%M")
+    = message.created_at.to_s(:datetime)
 
   .chatscreen__main__message-lists__message--text
     - if message.content.present?

@@ -19,7 +19,7 @@
       .chatscreen__footer__form--picture
         = f.label :image, class: 'form__mask__image' do
           = fa_icon 'picture-o'
-          = f.file_field :image, class: 'hidden'
+          = f.file_field :image, class: 'hidden chatscreen__footer__form--input'
       = f.submit 'Send', class: 'chatscreen__footer__form--send'
 
 
