@@ -1,15 +1,15 @@
 $(function(){
   function buildHTML(message){
 	var html = `<div class="chatscreen__main__message-lists__message">
-								<div class="chatscreen__main__message-lists__message--user">
-									${message.user_name}
-								</div>
-								<div class="chatscreen__main__message-lists__message--date">
-									${message.created_at} 
-								</div>
-								<div class="chatscreen__main__message-lists__message--text">
-									${message.content}
-						</div>`
+				  <div class="chatscreen__main__message-lists__message--user">
+					${message.user_name}
+				  </div>
+				  <div class="chatscreen__main__message-lists__message--date">
+					${message.created_at} 
+				  </div>
+				  <div class="chatscreen__main__message-lists__message--text">
+					${message.content}
+				  </div>`
 	
 	if (message.image.url == null){
 		html = $(html).append(`</div>`)
