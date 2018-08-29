@@ -8,33 +8,21 @@ $(function(){
 									   ${message.created_at} 
 									</div>
 									<div class="chatscreen__main__message-lists__message--text">
-									  ${message.content}
-									</div>
-								</div>`
-    return html;
-  }
-	
-	function imageHTML(message){
-		var html = `<div class="chatscreen__main__message-lists__message">
-									<div class="chatscreen__main__message-lists__message--user">
-										${message.user_name}
-									</div>
-									<div class="chatscreen__main__message-lists__message--date">
-									  ${message.created_at} 
-									</div>
-									<div class="chatscreen__main__message-lists__message--text">
-										<img class="lower-message__image" src="${message.image.url}" alt="tes">
 										${message.content}
-									</div>
-								</div>`
-    return html;
-	}
-
+                  </div>`
+		
+		if (message.image == null){
+			html = $(html).append(`</div>`)
+		} else {
+			html = $(html).append(`<div class = 'chatscreen__main__message-lists__message--image'><img src = '${message.image.url}'></div></div>`)
+		}
+		return html;
+  };
+	
 	function scroolMessage(){
-		var new_message = $('.chatscreen__main')[0]
+		var new_message = $('.chatscreen__main')[0];
 		$(".chatscreen__main").animate({scrollTop: new_message.scrollHeight}, 'fast');
-
-	}
+	};
 
 	$("#new_message").on("submit", function(e){
 		e.preventDefault();
@@ -50,19 +38,15 @@ $(function(){
 			contentType: false
 		})
 		.done(function(data){
-			if (data.image == null){
-				var html = buildHTML(data);}
-			else{
-				var html = imageHTML(data);
-			}
-			$('.chatscreen__main__message-lists').append(html)
+			var html = buildHTML(data);
+			$('.chatscreen__main__message-lists').append(html);
 			$('#new_message')[0].reset();
 			$(".chatscreen__footer__form--send").prop("disabled", false);
-			scroolMessage()
+			scroolMessage();
 		})
 		
 		.fail(function(){
 			alert('error');
-		})
-  })
-})
+		});
+  });
+});
