@@ -1,6 +1,4 @@
-if @message.image.present?
-  json.image  @message.image 
-end
+json.image  @message.image 
 json.content  @message.content 
 json.created_at  @message.created_at.to_s(:datetime)
 json.user_id  @message.user.id

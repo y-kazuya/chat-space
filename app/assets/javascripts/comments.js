@@ -5,13 +5,13 @@ $(function(){
 										${message.user_name}
 									</div>
 									<div class="chatscreen__main__message-lists__message--date">
-									   ${message.created_at} 
+										${message.created_at} 
 									</div>
 									<div class="chatscreen__main__message-lists__message--text">
 										${message.content}
-                  </div>`
+					        </div>`
 		
-		if (message.image == null){
+		if (message.image.url == null){
 			html = $(html).append(`</div>`)
 		} else {
 			html = $(html).append(`<div class = 'chatscreen__main__message-lists__message--image'><img src = '${message.image.url}'></div></div>`)
