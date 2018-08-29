@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-		var html =	`<div class="chatscreen__main__message-lists__message">
+		var html = `<div class="chatscreen__main__message-lists__message">
 			<div class="chatscreen__main__message-lists__message--user">
 				${message.user_name}
 			</div>
