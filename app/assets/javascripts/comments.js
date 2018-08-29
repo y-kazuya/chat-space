@@ -17,8 +17,9 @@ $(function(){
 	else {
 	  html = $(html).append(`<div class = 'chatscreen__main__message-lists__message--image'><img src = '${message.image.url}'></div></div>`)
 	}
+
 	return html;
-    };
+  };
 
 	function scroolMessage(){
 	  var new_message = $('.chatscreen__main')[0];
