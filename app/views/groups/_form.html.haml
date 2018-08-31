@@ -20,11 +20,11 @@
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      %label.chat-group-form__label{for: "chat_group_チャットメンバー"} チャットメンバー
+      = f.label :user_ids, "チャットメンバー", class: "chat-group-form__label", for: "group_user_ids"
     .chat-group-form__field--right
       #chat-group-users
         #chat-group-user-8.chat-group-user.clearfix
-          %input{name: 'group[user_ids][]', type: "hidden", value: "#{current_user.id}"}
+          = f.hidden_field :user_ids, value: "#{current_user.id}" ,name: "group[user_ids][]"
           %p.chat-group-user__name 
             #{current_user.name}
 
@@ -32,3 +32,4 @@
     .chat-group-form__field--left
     .chat-group-form__field--right
       = f.submit class: 'chat-group-form__action-btn'
+      
