@@ -13,14 +13,9 @@ $(function(){
         ${message.content}
       </div>`
       
-    if (message.image.url == null){
-      html = $(html).append(`</div>`);
-    }
-    else {
-      html = $(html).append(`<div class = 'chatscreen__main__message-lists__message--image'><img src = '${message.image.url}'></div></div>`);
-    }
-
+    message.image.url == null ? html = $(html).append(`</div>`) : html = $(html).append(`<div class = 'chatscreen__main__message-lists__message--image'><img src = '${message.image.url}'></div></div>`)
     message_list.append(html);
+    scroolMessage();
   }
   
   function scroolMessage(){
@@ -30,23 +25,18 @@ $(function(){
   
   var interval = setInterval(function(){
     if (location.pathname.match(/\/groups\/\d+\/messages/)) {
+      var count = $(".chatscreen__main__message-lists__message").length
+
       $.ajax({
         url: location.href,
+        type: "GET",
+        data: {count: count},
         dataType: 'json',
       })
       .done(function(messages){
-        var now_count = $(".chatscreen__main__message-lists__message").length 
-        var messages_count = messages.length  
-        if (messages_count !== now_count) {
-          var change = messages_count - now_count
-          var new_messages = (messages.slice(messages_count - change , messages_count))
-          new_messages.forEach(function(message){
-            appendmessage(message);
-          });
-          scroolMessage();
-        }
-        else {
-        }
+        messages.forEach(function(message){
+          appendmessage(message);
+        });
       })
       .fail(function() {
         alert('自動更新に失敗しましたよ');

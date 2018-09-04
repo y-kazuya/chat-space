@@ -3,9 +3,15 @@ class MessagesController < ApplicationController
 
   def index
     @message = Message.new
-    @messages = @group.messages.includes(:user)
+    @count_now = params[:count].to_i
+    @count_db = Message.where(group_id: @group).count
+    if @count_now != @count_db
+      @changes = @count_db - @count_now
+      @messages = @group.messages.order(created_at: :DESC).includes(:user).limit(@changes) 
+      @messages = @messages.sort { |a, b| a.id <=> b.id }
+    end
     respond_to do |format|
-      format.html
+      format.html {@messages = @group.messages.includes(:user)}
       format.json
     end
   end
