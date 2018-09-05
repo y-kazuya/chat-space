@@ -13,11 +13,15 @@ $(function(){
         ${message.content}
       </div>`
       
-    message.image.url == null ? html = $(html).append(`</div>`) : html = $(html).append(`<div class = 'chatscreen__main__message-lists__message--image'><img src = '${message.image.url}'></div></div>`)
-    message_list.append(html);
+    message_list.append(has_image(message, html));
     scroolMessage();
   }
   
+  function has_image (message, html){
+    message.image.url == null ? html = $(html).append(`</div>`) : html = $(html).append(`<div class = 'chatscreen__main__message-lists__message--image'><img src = '${message.image.url}'></div></div>`)
+    return html
+  }
+
   function scroolMessage(){
     var new_message = $('.chatscreen__main')[0];
     $(".chatscreen__main").animate({scrollTop: new_message.scrollHeight}, 'fast');
