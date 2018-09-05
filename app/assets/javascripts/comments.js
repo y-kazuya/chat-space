@@ -45,7 +45,6 @@ $(function(){
 			$(".chatscreen__footer__form--send").prop("disabled", false);
 			scroolMessage();
 		})
-
 		.fail(function(){
 			alert('error');
 		});
