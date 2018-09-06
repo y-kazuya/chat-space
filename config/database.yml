@@ -16,6 +16,7 @@ default: &default
   username: root
   password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
   socket: /tmp/mysql.sock
+  database: chat-space_production
 
 development:
   <<: *default
