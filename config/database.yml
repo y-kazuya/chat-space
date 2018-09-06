@@ -15,7 +15,7 @@ default: &default
   pool: 5
   username: root
   password: <%= ENV['CHAT-SPACE_DATABASE_PASSWORD'] %>
-  socket: /tmp/mysql.sock
+  socket: /var/lib/mysql/mysql.sock
   database: chat-space_production
 
 development:
